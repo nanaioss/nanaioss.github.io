@@ -1,0 +1,304 @@
+.music-body {
+    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url("../img/bg3.JPEG");
+    background-repeat: no-repeat;
+    
+
+    .music-nav{
+        
+        width: 100vw;
+        height: 100vh;
+        padding: 10px;
+        margin-top: 300px;
+        overflow: hidden;
+        position: fixed;
+        
+
+        .music-ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            list-style: none;
+
+            
+
+            .music-li{
+                
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-decoration: none;
+                font-size: 15px;
+                overflow: hidden;
+                transition: 0.6s;
+                margin: 25px;
+                font-family: 'Montserrat Alternates', sans-serif;
+                letter-spacing: 3px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgb(112, 250, 78);
+                text-shadow:
+                      0 0 7px rgb(0, 0, 0),
+                      0 0 10px #fff,
+                      0 0 21px #fff,
+                      0 0 42px #0fa,
+                      0 0 82px #0fa,
+                      0 0 92px #0fa,
+                      0 0 102px #0fa,
+                      0 0 151px #0fa;
+
+            }
+            .music-li:hover {
+                    color: #000000;
+                    padding: 30px;
+                    background: rgba($color: #6ff76f, $alpha: 1.0);
+                    opacity: .5;
+                    box-shadow: 0 0 10px #6aff00, 0 0 40px #6aff00, 0 0 80px #6aff00;
+            }
+
+            .fa-brands:hover{
+
+                    font-size: 70px;
+                    transition: 5s;
+            }
+
+            .fa-brands {
+
+                font-size: 50px;
+                color: #6aff00;
+            }
+            
+        }
+    }
+
+   
+    .top-nav {
+      
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      height: 50px;
+      position:relative !important;
+      margin-bottom: 0px !important;
+      padding: 15px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      width: 100vw;
+      
+    }
+    
+    .menu {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .menu > li {
+      margin: 0 1rem;
+      overflow: hidden;
+      padding: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 15px;
+      overflow: hidden;
+      transition: 0.6s;
+      letter-spacing: 3px;
+      border-radius: 15px;
+      color: rgb(112, 250, 78);
+      text-shadow:
+                      0 0 7px #fff,
+                      0 0 10px #fff,
+                      0 0 21px #fff,
+                      0 0 42px #0fa,
+                      0 0 82px #0fa,
+                      0 0 92px #0fa,
+                      0 0 102px #0fa,
+                      0 0 151px #0fa;
+
+
+    }
+
+    .menu >li a {
+         text-decoration: none;
+         color: #6ff76f;
+    }
+
+    
+
+    .menu >li:hover {
+      color: #000000;
+                    background: rgba($color: #6ff76f, $alpha: 1.0);
+                    opacity: .5;
+                    box-shadow: 0 0 10px #6aff00, 0 0 40px #6aff00, 0 0 80px #6aff00;
+    }
+    
+    .menu-button-container {
+      display: none;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #menu-toggle {
+      display: none;
+    }
+    
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: #0fa;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+    
+    .menu-button::before {
+      content: '';
+      margin-top: -8px;
+    }
+    
+    .menu-button::after {
+      content: '';
+      margin-top: 8px;
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+      margin-top: 0px;
+      transform: rotate(405deg);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button {
+      background: rgba(255, 255, 255, 0);
+    }
+    
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+      margin-top: 0px;
+      transform: rotate(-405deg);
+    }
+    
+    @media (max-width: 700px) {
+      .menu-button-container {
+        display: flex;
+      }
+      .menu {
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        
+      }
+      #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: 0.8s;
+        border-radius: unset;
+      }
+      #menu-toggle:checked ~ .menu li {
+        
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+        color: white;
+        background-image: url("../img/bg4.JPEG");
+      }
+      .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
+
+      .menu >li:hover {
+                      color: #000000;
+                      background: rgba($color: #06f7e3, $alpha: 1.0);
+                      transition: 0.5s;
+                      
+      }
+
+
+      .music-nav {
+
+       
+        margin: unset;
+        margin-top: 50%;
+        
+        
+
+        .music-ul {
+
+          
+          margin: unset;
+          padding: unset;
+          flex-direction:row;
+          flex-wrap: wrap;
+          
+          .music-li {
+
+            
+            margin: unset;
+            padding: unset;
+            margin: 15px;
+            padding: 15px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .top-nav {
+
+        .menu {
+          
+
+          li {
+            margin: unset;
+            
+          }
+
+      
+
+          li> a {
+
+            justify-content: center;
+            font-size: unset;
+            font-size: 10px;
+            
+          }
+        }
+      }
+
+      .music-ul {
+        flex-wrap: wrap;
+      }
+    }
+  
+  
+    
+
+
+}
