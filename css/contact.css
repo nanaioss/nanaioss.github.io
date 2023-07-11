@@ -28,15 +28,16 @@
   transition: 0.6s;
   margin: 25px;
   border-radius: 15px;
-  color: rgb(112, 250, 78);
-  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  color: rgb(238, 78, 250);
+  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
 }
 .contact-body .contact-nav .contact-ul .contact-li:hover {
   color: #000000;
   padding: 30px;
-  background: #6ff76f;
+  background: #f76ff0;
   opacity: 0.5;
-  box-shadow: 0 0 10px #6aff00, 0 0 40px #6aff00, 0 0 80px #6aff00;
+  box-shadow: 0 3px 10px #a76193, 0 0 40px #8833d3, 0 0 80px #be84f1;
+  background-color: #be84f1;
 }
 .contact-body .contact-nav .contact-ul .fa-brands:hover {
   font-size: 70px;
@@ -55,8 +56,8 @@
   overflow: hidden;
   position: fixed;
   border-radius: 20px;
-  color: rgb(112, 250, 78);
-  box-shadow: 0 0 3px rgb(0, 0, 0), 0 0 5px #fff, 0 0 2px #fff, 0 0 4px #0fa, 0 0 8px #0fa, 0 0 9px #0fa, 0 0 12px #0fa, 0 0 50px #0fa;
+  color: rgb(238, 78, 250);
+  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
 }
 .contact-body .contact-nav .subscribe .form {
   display: flex;
@@ -78,7 +79,8 @@
   background-color: transparent;
   opacity: 0.8;
   border-radius: 50px;
-  box-shadow: 0 0 3px rgb(0, 0, 0), 0 0 5px #fff, 0 0 2px #fff, 0 0 4px #0fa, 0 0 8px #0fa, 0 0 9px #0fa, 0 0 12px #0fa, 0 0 5px #0fa;
+  color: rgb(238, 78, 250);
+  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
 }
 .contact-body .contact-nav .subscribe .form .formButton {
   text-decoration: none;
@@ -92,7 +94,8 @@
   font-size: 13px;
   color: #6aff00;
   background: transparent;
-  box-shadow: 0 0 3px rgb(0, 0, 0), 0 0 5px #fff, 0 0 2px #fff, 0 0 4px #0fa, 0 0 8px #0fa, 0 0 9px #0fa, 0 0 12px #0fa, 0 0 5px #0fa;
+  color: rgb(238, 78, 250);
+  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
 }
 .contact-body .contact-nav .subscribe .form input::-moz-placeholder {
   color: #0fa;
@@ -115,7 +118,8 @@
   transition: 0.5s;
   background: transparent;
   opacity: 0.8;
-  box-shadow: 0 0 5px #6ff76f, 0 0 10px #6ff76f, 0 0 20px #6ff76f;
+  color: rgb(238, 78, 250);
+  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
 }
 .contact-body .top-nav {
   display: flex;
@@ -148,18 +152,25 @@
   transition: 0.6s;
   letter-spacing: 3px;
   border-radius: 15px;
-  color: rgb(112, 250, 78);
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  color: rgb(238, 78, 250);
+  text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
 }
 .contact-body .menu > li a {
   text-decoration: none;
-  color: #6ff76f;
+  color: #df7fc4;
 }
 .contact-body .menu > li:hover {
   color: #000000;
-  background: #6ff76f;
+  background: #be84f1;
   opacity: 0.5;
-  box-shadow: 0 0 10px #6aff00, 0 0 40px #6aff00, 0 0 80px #6aff00;
+  box-shadow: 0 3px 10px #a76193, 0 0 40px #8833d3, 0 0 80px #be84f1;
+  background-color: #be84f1;
+}
+
+.contact-body .menu > li a:hover {
+
+  color: black;
+  
 }
 .contact-body .menu-button-container {
   display: none;
@@ -265,8 +276,8 @@
     margin: 10px;
     padding-top: 15px;
     transition: 0.6s;
-    color: rgb(112, 250, 78);
-    text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 50px #0fa, 0 0 50px #0fa, 0 0 12px #0fa, 0 0 11px #0fa;
+    color: rgb(238, 78, 250);
+    text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgba(208, 0, 255, 0.362), 0 0 82px rgb(255, 0, 234), 0 0 92px rgba(144, 0, 255, 0.53), 0 0 102px rgb(217, 0, 255), 0 0 151px rgba(170, 0, 255, 0.365);
   }
   .contact-body .contact-nav .contact-ul .subscribe {
     all: unset;

@@ -3,6 +3,7 @@
   padding: 0;
   background-image: url("../img/bg3.JPEG");
   background-repeat: no-repeat;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 .shows-body .container {
   display: flex;
@@ -11,9 +12,8 @@
   margin-top: 10%;
 }
 .shows-body .container .box {
-  padding: 100px;
-  color: rgb(47, 216, 5);
-  text-shadow: 0 0 3px rgb(86, 76, 76), 0 0 1px #fff, 0 0 2px #fff, 0 0 42px #0fa, 0 0 40px #0fa, 0 0 40px #0fa, 0 0 12px #0fa, 0 0 11px #0fa;
+  padding: 30px;
+  color: #df7fc4;;
 }
 .shows-body .container .box p {
   font-family: "Montserrat Alternates", sans-serif;
@@ -43,7 +43,7 @@
 .shows-body .menu > li {
   margin: 0 1rem;
   overflow: hidden;
-  padding: 15px;
+  padding: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 15px;
@@ -51,18 +51,24 @@
   transition: 0.6s;
   letter-spacing: 3px;
   border-radius: 15px;
-  color: rgb(112, 250, 78);
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  color: rgb(205, 5, 216);
+  
 }
 .shows-body .menu > li a {
   text-decoration: none;
-  color: #6ff76f;
+  color: #df7fc4;
+  letter-spacing: 4px;
+
+}
+.shows-body .menu > li a:hover {
+
+  color: black;
+  font-weight: bolder;
 }
 .shows-body .menu > li:hover {
-  color: #000000;
-  background: #6ff76f;
-  opacity: 0.5;
-  box-shadow: 0 0 10px #6aff00, 0 0 40px #6aff00, 0 0 80px #6aff00;
+  transition: all 0.5s;
+  box-shadow: 0 3px 10px #a76193, 0 0 40px #8833d3, 0 0 80px #be84f1;
+  background-color: #be84f1;
 }
 .shows-body .menu-button-container {
   display: none;
