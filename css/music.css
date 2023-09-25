@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   display: flex;
-  background-image: url("../img/bg3.JPEG");
-  background-repeat: no-repeat;
+  background-image: url("../img/bg_update/2.jpg");
+  background-repeat: fixed;
 }
 .music-body .music-nav {
   width: 100vw;
