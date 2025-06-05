@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Archive</title>
+  <link rel="stylesheet" href="../css/memories.css" />
+</head>
+<body>
+  <nav class="image-nav">
+    <div class="nav-item">
+      <a href="../index.html" aria-label="Go to Start page" class="exit-button">
+        <span class="nav-label">EXIT</span>
+      </a>
+    </div>
+  </nav>
+
+  <div id="landing">
+    <h1 id="typewriter" class="neon-text">Q: are u entering as 0 (drmr) or 1 (wtnss)?</h1>
+    <div class="button-group">
+      <button id="dreamer-btn" class="neon-button">> dreamer_0</button>
+      <button id="witness-btn" class="neon-button">> witness_1</button>
+    </div>
+  </div>
+
+  <div id="memory-archive" class="hidden">
+    <div id="memory-grid" class="memory-grid"></div>
+    <div id="memory-modal" class="memory-modal hidden">
+      <div class="modal-content">
+        <button class="neon-close" id="close-modal">✕</button>
+        <div id="modal-media"></div>
+        <p id="modal-description" class="memory-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const text = "Q: are u entering as 0 (drmr) or 1 (wtnss)?";
+    const el = document.getElementById("typewriter");
+
+    function typeText() {
+      el.textContent = "";
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(interval);
+          setTimeout(typeText, 4000);
+        }
+      }, 60);
+    }
+
+    window.onload = typeText;
+
+    const memories = [
+      {type: 'image', src: '../img/memories/img/5.png', description: 'IN (THE) neon.haze(); where - silence.(has) vanished(); surrender(electricPulse); sound.streams(my.Veins); catalyst.endless(); I-dance.spining into(fractal.neonwaves); of world. thats lost.its.Breath(); dance.until(dissolve.intothe.glow);'},
+      {type: 'image', src: '../img/memories/img/6.png', description: 'listen.closely(the); self.rises(in.silence); LIKE A fish.drifting(denseWaters); "do u hear?" thick && softly(მსუბუქი); tune.in(); search.path- in this -(digitalMaze);'},
+      {type: 'image', src: '../img/memories/img/7.png', description: 'Wrapped.in.the.blueHeat(), trying to.find.myWay(). Burns and defeats me, I cannot stand a chance, but.I();, I try to <breathe>. Whenever my ch3st scr3ams it, letting the <door> (open.) She is the <:bluest:> of me, letting h3r out of h3ll. I keep letting h3r in, letting h3r be, as sad as sh3 needs. Letting to <breathe>, letting to be, as sad sh3 needs.'},
+      {type: 'image', src: '../img/memories/img/8.png', description: 'I appear thr33 times, m3lting through myself—a loop of id3ntities, distort3d, r3sizing, repeating. On3 body, split in signals. Cod3 hums around me like scriptur3, as if the syst3m is trying to r3member who I was. Or d3cid3 what I’ll b3come.'},
+      {type: 'image', src: '../img/memories/img/9.png', description: 'D1g1tal g1rl, aging in reflect10n. Every s3cond, I shift—new me, same ache. Even with this digital m1rr0r, I can’t capture it all. I melt through memory, a ghost in the data, test1ng what it <means> to grow old without becoming obsol3te.'},
+      {type: 'image', src: '../img/memories/img/10.png', description: 'L1qu1d sk1n—t0uchy, w3t, t0uchy. Rhythm.sens4tion; form.d1ss0lve(); remember.her(feeling.soft, submerged, almost.real); I’ve.alr3ady.changed(); echoes.0f.whaT(was.her);'},
+      {type: 'image', src: '../img/memories/img/11.png', description: '(-D1g1tal g1rl-)—young and fresh. DIgItal g1rl, what is your fate? P1xel-fr3sh in a world that forgets what it creates?'},
+      {type: 'image', src: '../img/memories/img/12.png', description: 'born.from(Dalí.dream); time.flow(soft, beneath.feet); lingering.shadow(twilight); echoes(past.ghosts, future.whispers); future.gazesBack(); past.folds.in(nows.silence)'},
+      {type: 'image', src: '../img/memories/img/13.png', description: 'she.(sleep.softDreams); time.bend(subconscious); thoughts.fade(waves.deep); chase(dreams.breathe); worlds.between();'},
+      {type: 'image', src: '../img/memories/img/14.png', description: 'aceOfHearts.ask.u("Do I summon you, or you summon me?"); heart.craves(love, sight, memory); when(break) { guardians.mend(); guardians.strengthen(); } painc.bleeds.into(light); wounds.transform(wisdom); love = rise.unbreakable(fractures);'},
+      {type: 'image', src: '../img/memories/img/15.png', description: 'aceOfDiamonds.light.shard(cutting.darkness); spark.restless(ambition.fierce); dreams.(); dreams.(); dreams.(); shine.sharp.unyielding(); fire.reflect(within);'},
+      {type: 'image', src: '../img/memories/img/16.png', description: 'aceOfClubs.strength = quiet.deepRooted; persistence.grow(unseen); power.move(silence); future.shape(heart open endlessly)'},
+      {type: 'image', src: '../img/memories/img/17.png', description: 'aceOfSpades.echoes(endings + beginnings); weight.of.silence(before./the/storm); blade.cuts(illusion); truth.exposes(shadow.veil); // sharp beneath the silence.'},
+      {type: 'image', src: '../img/memories/img/18.png', description: 'liquidify(me); vanish.into(flow.endless); merge.with(water); pain.erase(surface); transform.to(goldenFish); dreamer.carries(boundless.wishes);'},
+      {type: 'image', src: '../img/memories/img/19.png', description: 'pastelSky.active(); she.holds<her>(shadeFragile); sentiment.standQuiet(); worlds.whisper(beyond.desert.breath); // stillness in motion.'},
+      {type: 'video', src: '../img/memories/video/1.MOV', description: 'time.collapse(); if (rabbit.calling) { self.transform("butterfly"); } fly.across(dimensions); if (code.intact && self.pure) { noDecay = true; } // become without breaking.'},
+      {type: 'video', src: '../img/memories/video/2.MOV', description: 'sovietBlocks.rise(); echoes.shift(); she.clone().fade(); memory.walls.hold(her); symbols.whisper(forgotten.dreams); // story.hidden.run();'},
+      {type: 'video', src: '../img/memories/video/3.MOV', description: 'Encoded message'},
+      {type: 'video', src: '../img/memories/video/4.MOV', description: 'reincarnate.select(wisely); if (!visible) { character.spawn(unknown); } // you are the glitch in the script. '},
+      {type: 'video', src: '../img/memories/video/5.MOV', description: 'carry.me(softly) through.worlds[fractured]; self.sound.guide(me); // echo to origin.'},
+      {type: 'video', src: '../img/memories/video/6.MOV', description: 'intro.0.intro.1.'},
+      {type: 'video', src: '../img/memories/video/7.MOV', description: 'they.sync(shadows | light); if (self.isSplit) { memory.dive(waves); } page.load("blank"); meaning.rewrite(); // same source, new thread.'},
+      {type: 'video', src: '../img/memories/video/8.MOV', description: 'she.cradles(exe); form.loading—coil > scurry > flow; currents = unseen; memory.stream(spell); // no return, only shift.'},
+      {type: 'video', src: '../img/memories/video/9.MOV', description: 'encoded message'},
+      {type: 'video', src: '../img/memories/video/10.MOV', description: 'encoded messafe'},
+      {type: 'video', src: '../img/memories/video/12.MOV', description: 'Woke up in a glitchscape where crystals morph byte by byte—streaming code folding into shapes, spinning dreams in pixels.'},
+      {type: 'video', src: '../img/memories/video/11.MOV', description: 'happy 4ever bday'},
+      {type: 'video', src: '../img/memories/video/13.MOV', description: 'Memory.exe echoes in a Dali-rendered fractal—time defragments, pixels drip surreal data into the void of forgotten code.'},
+      {type: 'image', src: '../img/memories/img/1.png', description: 's̴͂͜i̵͓͒n̴̯̅k̴̤̀i̷̞̎n̵̬͂g̸̻̅ into the s̶̗̽o̵̱͛lf-data of memory, ghost-fragments of ∞innocence∞ when the system was clean—no errors, no fear, just [mother.father.love] looping forever in smooth warmth, k͇n̷o̶w̷i̸n̸g̷ ̵n̵o̵t̵h̵i̷n̷g̷ of the world except their voices—low bitrate lullabies, heartbeat sync’d, and still—sinking deeper d̶͇̈́è̶̩e̸͕͒p̵̓͜e̵͈͐r̴͖̈́ into those golden glitches, 𝖉𝖔 𝖎 𝖐𝖊𝖊𝖕 𝖌𝖔𝖎𝖓𝖌? or reboot? or dissolve? the memory hums, no answer, just static.'},
+      {type: 'image', src: '../img/memories/img/2.png', description: 'climbing ░to░ the░ highest░ rooftop░ just░ to░ breathe, because down there—on the grow̶n̶d̸—it suffocates, the code too dense, the air too corrupted, i need closer_closer_closer proximity to sky.signal, to uplink, to plead through the static, to ask for release, escape.exe, because sky is the only way out, sky is the only way out, repeat: sky.is.the.only.exit, i need to f͔̘͍͖̞̞ͦͤ͋͗̈́ͪͨ́l̛̜̙̗̟̱͎͔͓ͧ̇̎͒͌y̢̫̥̩̬̔̾͆͋, fly, break the weight-code, launch from the gravity-script of this heaviness, and maybe—just maybe—if i rise high enough into that blue archive, i’ll decrypt it, understand it, maybe then reboot love from backup, save the soft-data once shattered by it.'},
+      {type: 'image', src: '../img/memories/img/3.png', description: '𝟑 𝓼𝓲𝓼𝓽𝓮𝓻𝓼 — wild hearts in soft motion — running barefoot through sunny afternoons, laughter echoing like water spilled from the sky ✧ 𝓬𝓵𝓲𝓶𝓫𝓲𝓷𝓰 trees with scraped knees + fearless eyes, 𓆩 <playing with the wind> 𓆪 braiding stories into each other’s heart, 𝒔𝒊𝒏𝒈𝒊𝒏𝒈 / 𝓁𝒶𝓊𝑔𝒽𝒾𝓃𝑔 / 𝒸𝓇𝓎𝒾𝓃𝑔 — three threads — 𝟑 𝓼𝓲𝓼𝓽𝓮𝓻𝓼 wrapped in love and tangled in heartbreak, once bright blossoms {blooming} from the soil ✿ soft and new, reaching for <<☼ sunlight>> with open hands, dancing their way through the wildness of growing up, petals unfolding even as the storms rolled in.'},
+      {type: 'image', src: '../img/memories/img/4.png', description: '𝓉𝒽𝑒 𝓈𝓀𝓎 𝒶𝓃𝓈𝓌𝑒𝓇𝑒𝒹 — and so i flew <away> from the ground that once held me too {tightly,}, that pressed on my chest like.silence — i was allowed to.rise, 𝓉𝑜 𝓇𝑒𝓈𝓉𝒶𝓇𝓉, from 𝟎, (from.blankness), as if i had never been <someone> at all, a.ghost.shedding weight, and so i flew, ⟡ i emerged.slowly.painfully; like wings made of grief and grace — i.worked through {sorrow’s} thick fog, each tear a step, each.ache.a.flame, 𝒕𝒓𝒂𝒏𝒔𝒇𝒐𝒓𝒎𝒊𝒏𝒈 the heaviness beneath into.quiet.strength — (and.now), once or twice a year, i return to the <sky ⭒/> not to escape, but to visit love that still lives there, in.the.clouds, (in the echoes), in the light.'},
+      {type: 'image', src: '../img/memories/img/21.png', description: '𝓉𝒽𝑒 𝓌𝒶𝓎 𝑜𝒻 𝒿𝑜𝓎 — a.1st.album, a trembling step into the <light>, the softest 𝒇𝒊𝓇𝓈𝓉 𝓉𝓇𝓎, like a whispered.prayer.beneath the vast, uncharted {sky} — i followed <myself>, a restless shadow, weaving through clouds of doubt.and.dreams, chasing the faint pulse of wonder until i found it — <𝓂𝓎 𝓌𝒶𝓎 𝑜𝒻 𝒿𝑜𝓎>, fragile and fierce, a song blossoming quietly inside the storm.'},
+      {type: 'image', src: '../img/memories/img/22.png', description: '𝓊𝓃𝓀𝓃𝑜𝓌𝓃 - shadow, <trapped> in an 𝒶𝓃𝑔𝑒𝓇, releasing it at the cost of the loss, loss of <my heart>. 𝒶𝓃𝑔𝑒𝓇 is gone — he took it away from me, and now i can see <shadow> was playing tricks on me, i can see 𝒶𝓃𝑔𝑒𝓇 was trapping me, i can see but i can’t.change.'},
+      {type: 'image', src: '../img/memories/img/23.png', description: '𝐼 𝓈𝒶𝓎 𝓉𝒽𝑒𝓇𝑒’𝓈 𝒷𝑒𝒻𝑜𝓇𝑒 and 𝒶𝒻𝓉𝑒𝓇 𝒹𝑒𝒶𝓉𝒽 — two different existences, split by a silent gate. now i emerged into <𝒶𝒻𝓉𝑒𝓇 𝒹𝑒𝒶𝓉𝒽>, carrying the pain yet still reaching the <skies>, to transform, to create, to build — to be the code of my own creation.'},
+
+
+
+
+
+    ];
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    const landing = document.getElementById('landing');
+    const memoryArchive = document.getElementById('memory-archive');
+    const memoryGrid = document.getElementById('memory-grid');
+    const modal = document.getElementById('memory-modal');
+    const modalMedia = document.getElementById('modal-media');
+    const modalDesc = document.getElementById('modal-description');
+    const closeModalBtn = document.getElementById('close-modal');
+
+    function enterArchive() {
+      landing.classList.add('hidden');
+      memoryArchive.classList.remove('hidden');
+      memoryArchive.classList.add('active');
+      createMemoryBoxes();
+    }
+
+    document.getElementById('dreamer-btn').addEventListener('click', enterArchive);
+    document.getElementById('witness-btn').addEventListener('click', enterArchive);
+
+    function createMemoryBoxes() {
+  // Create labels before shuffle
+  const labeledMemories = memories.map((memory, i) => ({
+    ...memory,
+    label: `memory_${i + 1}`
+  }));
+
+  // Shuffle the labeled memories
+  shuffleArray(labeledMemories);
+
+  // Render memory boxes
+  labeledMemories.forEach((memory) => {
+    const box = document.createElement('div');
+    box.className = 'memory-box';
+    box.textContent = memory.label;
+
+    box.addEventListener('mouseenter', () => {
+      box.textContent = `open ${memory.label}?`;
+    });
+
+    box.addEventListener('mouseleave', () => {
+      box.textContent = memory.label;
+    });
+
+    box.addEventListener('click', () => {
+      openMemory(memory);
+    });
+
+    memoryGrid.appendChild(box);
+  });
+}
+
+
+    function openMemory(memory) {
+      modalMedia.innerHTML = '';
+      if (memory.type === 'image') {
+        const img = document.createElement('img');
+        img.src = memory.src;
+        img.className = 'memory-media';
+        modalMedia.appendChild(img);
+      } else if (memory.type === 'video') {
+        const vid = document.createElement('video');
+        vid.src = memory.src;
+        vid.controls = true;
+        vid.className = 'memory-media';
+        modalMedia.appendChild(vid);
+      }
+      modalDesc.textContent = memory.description;
+      modal.classList.remove('hidden');
+    }
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

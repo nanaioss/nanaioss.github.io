@@ -1,0 +1,428 @@
+/* General layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+    background: #fdfdfd;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+  .chaotic-emojis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .chaotic-emojis .emoji {
+    position: absolute;
+    animation: flickerColor 0.6s infinite steps(1, end);
+    opacity: 0.4;
+  }
+  
+  @keyframes flickerColor {
+    0%   { color: #ff4081; }
+    25%  { color: #7c4dff; }
+    50%  { color: #00bcd4; }
+    75%  { color: #4caf50; }
+    100% { color: #ff4081; }
+  }
+  
+  
+  /* nav bar */
+  .nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 10px 20px;
+    padding-top: 25px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 30px;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px 20px;
+    user-select: none;
+    width: 35px;
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .hamburger span {
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  
+  .image-nav {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 5px 20px;
+    align-items: center;
+  }
+  
+  .image-nav .nav-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .image-nav .nav-item img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-nav .nav-item img:hover {
+    transform: scale(1.8);
+  }
+  
+  .nav-label {
+    display: none;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+  
+  /* Decorative background images */
+  .background-images .bg {
+    position: absolute;
+    max-width: 49vw;
+    opacity: 0.70;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .bg1 {
+    top: 15%;
+    left: -1%;
+    width: 100%;
+  }
+  
+  .bg2 {
+    bottom: 10%;
+    right: -15%;
+  }
+  
+  .bg3 {
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Wrapper for main content */
+  .music-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;    
+  }
+  
+  /* Button blocks */
+  .music-option {
+    text-align: center;
+    margin-bottom: 1px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  
+  /* New music block layout */
+  .music-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+
+    
+  }
+  
+  /* Labels under buttons */
+  .label {
+    font-size: 0.9rem;
+    color: #555;
+    width: 480px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgb(152, 151, 151);
+    padding-bottom: 15px; /* adjust the value as you want */
+    color: #76ffa1;
+    background-color: rgba(8, 9, 8, 0.5);
+
+  }
+  
+  /* Buttons */
+  .music-btn {
+    color: #76ffa1;
+    background-color: rgba(8, 9, 8, 0.5);
+    padding: 16px 28px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    transition: transform 0.4s ease;
+
+  }
+  
+  .music-btn:hover {
+    background: #acff9d;
+    color: rgb(248, 65, 248);
+    transform: scale(1.2);
+
+  }
+  
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(214, 253, 216, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal:target {
+    display: flex;
+  }
+  
+  .modal-content {
+    
+    color: #76ffa1;
+    background-color: rgba(8, 9, 8, 0.5);padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .platform-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .platform-links a {
+    padding: 10px 14px;
+    color: rgb(48, 69, 51);;
+    border-radius: 6px;
+    border: 1px solid rgb(2, 222, 38);;
+    color: #76ffa1;
+    background-color: rgba(8, 9, 8, 0.5);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease;
+
+  }
+  
+  .platform-links a:hover {
+    background: #76ffa1;
+    transform: scale(1.1);
+
+
+  }
+  
+  .close-modal {
+    display: inline-block;
+    margin-top: 20px;
+    background: #7dffba;
+    color: rgb(63, 60, 60);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  
+  .close-modal:hover {
+    background: #c0392b;
+  }
+
+  /* Tablet styles: 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bg1 {
+      max-width: none !important;
+      width: 50vw;
+      top: 20%;
+      left: -8%;
+    }
+  
+    .label {
+      border-bottom: 2px solid;
+      border-color: #a7aaad;
+      width: 360px;
+      color: #76ffa1;
+      background-color: rgba(8, 9, 8, 0.5);
+    }
+  }
+  
+  /* Phones: 481px to 768px */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .bg1 {
+      max-width: none !important;
+      width: 50vw;
+      top: 25%;
+      left: -8%;
+    }
+  
+    .bg {
+      max-width: 60vw;
+    }
+    .label {
+        border-bottom: 1px solid;
+        width: 360px;
+        color: #76ffa1;
+        background-color: rgba(8, 9, 8, 0.5);
+    }
+  }
+  
+  /* Very small phones: up to 480px */
+  @media (min-width: 320px) and (max-width: 480px) {
+    .label {
+      position: fixed !important;   /* take it out of normal flow */
+      top: 120px;                    /* adjust to navbar height */
+      left: 45%;                   /* center horizontally */
+      transform: translateX(-50%);
+      width: 90vw;                 /* responsive width */
+      max-width: 380px;
+      margin: 0;
+      border: 2px solid;
+      color: #76ffa1;
+      background-color: rgba(8, 9, 8, 0.5);
+      z-index: 9999;               /* make sure it’s on top */
+      opacity: 2;                  /* avoid opacity issues */
+      padding: 10px 15px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  
+    /* Push the .music-wrapper down to avoid overlap */
+    .music-wrapper {
+      padding-top: 110px;  /* enough space for label + navbar */
+    }
+
+    .bg1 {
+        max-width: none !important;
+        width: 100vw;
+        top: 25%;
+        left: -8%;
+    }
+  }
+  
+  
+  /* Small phones and below: up to 600px */
+  @media (max-width: 600px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .image-nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      gap: 15px;
+      padding: 10px 0;
+    }
+  
+    .nav-toggle:checked + .hamburger + .image-nav {
+      display: flex;
+    }
+  
+    .image-nav .nav-item a {
+      flex-direction: row;
+      align-items: center;
+      padding: 0 20px;
+    }
+  
+    .image-nav .nav-item img {
+      width: 28px;
+      margin-right: 12px;
+    }
+  
+    .nav-label {
+      display: inline-block;
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 2540px) {
+    /* Nav bar images bigger */
+    .image-nav .nav-item img {
+      width: 120px;
+    }
+  
+    .image-nav .nav-item img:hover {
+      transform: scale(2.5);
+    }
+  
+    /* Nav labels bigger */
+    .nav-label {
+      font-size: 18px;
+    }
+  
+    /* Section text bigger */
+    .label {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      width: 720px; /* scale width a bit */
+    }
+  
+    /* Buttons bigger */
+    .music-btn {
+      font-size: 1.6rem;
+      padding: 24px 40px;
+    }
+  
+    /* Wrapper padding bigger */
+    .music-wrapper {
+      padding: 150px 40px;
+      gap: 120px;
+    }
+  
+    /* Emojis bigger */
+    .chaotic-emojis .emoji {
+      font-size: 4rem !important;
+      opacity: 0.7;
+    }
+  
+    /* Nav wrapper padding bigger */
+    .nav-wrapper {
+      padding: 30px 60px 25px;
+    }
+  
+    
+  }
+  

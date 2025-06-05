@@ -1,0 +1,437 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background: radial-gradient(circle at center, #000010 0%, #000000 90%);
+  font-family: 'Segoe UI', sans-serif;
+  overflow: auto;
+  color: white;
+  min-height: 90vh;
+}
+
+/* Galaxy container */
+#galaxy {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #000000 0%, #090a0f 100%);
+  z-index: 0;
+}
+
+#galaxy::before,
+#galaxy::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 1px;
+  height: 1px;
+  background: white; /* Make the dot visible for box-shadow source */
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+
+
+#galaxy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: white;
+  pointer-events: none;
+  z-index: 0;
+  animation: twinkle1 2s infinite ease-in-out alternate;
+  box-shadow:
+    100px 100px 1px 0.5px white,
+    150px 120px 2px 1px white,
+    180px 300px 3px 1px white,
+    220px 400px 1px 0.5px white,
+    250px 500px 2px 0.8px white,
+    280px 600px 3px 1.2px white,
+    310px 700px 2px 0.9px white,
+    340px 800px 1px 0.5px white,
+    370px 900px 3px 1.3px white,
+    400px 100px 1px 0.4px white,
+    430px 200px 2px 1px white,
+    460px 300px 3px 1.5px white,
+    490px 400px 1px 0.5px white,
+    520px 500px 2px 1px white,
+    550px 600px 3px 1.1px white,
+    580px 700px 1px 0.4px white,
+    610px 800px 2px 0.9px white,
+    640px 900px 3px 1.2px white,
+    670px 100px 1px 0.4px white,
+    700px 200px 2px 0.8px white,
+    730px 300px 3px 1.3px white,
+    760px 400px 1px 0.5px white,
+    790px 500px 2px 0.9px white,
+    820px 600px 3px 1.1px white,
+    850px 700px 1px 0.4px white,
+    880px 800px 2px 1px white,
+    910px 900px 3px 1.5px white,
+    940px 100px 1px 0.5px white,
+    970px 200px 2px 1px white,
+    1000px 300px 3px 1.2px white,
+    1030px 400px 1px 0.3px white,
+    1060px 500px 2px 0.8px white,
+    1090px 600px 3px 1.4px white,
+    1120px 700px 1px 0.4px white,
+    1150px 800px 2px 1px white,
+    1180px 900px 3px 1.1px white,
+    1210px 100px 1px 0.5px white,
+    1240px 200px 2px 0.9px white,
+    1270px 300px 3px 1.3px white,
+    1300px 400px 1px 0.4px white,
+    1330px 500px 2px 0.8px white,
+    1360px 600px 3px 1.2px white,
+    1390px 700px 1px 0.3px white,
+    1420px 800px 2px 0.9px white,
+    1450px 900px 3px 1.4px white,
+    1480px 100px 1px 0.5px white,
+    1510px 200px 2px 1px white,
+    1540px 300px 3px 1.1px white,
+    1570px 400px 1px 0.3px white,
+    1600px 500px 2px 0.8px white,
+    1630px 600px 3px 1.3px white,
+    1660px 700px 1px 0.4px white,
+    1690px 800px 2px 1px white,
+    1720px 900px 3px 1.2px white,
+    1750px 100px 1px 0.4px white,
+    1780px 200px 2px 0.8px white,
+    1810px 300px 3px 1.5px white,
+    1840px 400px 1px 0.5px white,
+    1870px 500px 2px 0.9px white,
+    1900px 600px 3px 1.2px white,
+    1930px 700px 1px 0.4px white,
+    1960px 800px 2px 0.9px white,
+    1990px 900px 3px 1.4px white,
+    2020px 100px 1px 0.3px white,
+    2050px 200px 2px 0.8px white,
+    2080px 300px 3px 1.3px white,
+    2110px 400px 1px 0.4px white,
+    2140px 500px 2px 1px white,
+    2170px 600px 3px 1.1px white,
+    2200px 700px 1px 0.4px white,
+    2230px 800px 2px 0.9px white,
+    2260px 900px 3px 1.3px white;
+}
+
+
+
+#galaxy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: white;
+  pointer-events: none;
+  z-index: 0;
+  animation: twinkle2 1s infinite ease-in-out alternate;
+  box-shadow:
+    100px 150px 2px 1px white,
+    300px 400px 2.5px 1.2px white,
+    600px 200px 2px 1px white,
+    800px 500px 2.8px 1.3px white,
+    1000px 100px 2.5px 1.1px white,
+    1200px 600px 1.8px 0.9px white,
+    1400px 300px 2.6px 1.2px white,
+    1600px 700px 2.3px 1px white,
+    1800px 400px 3px 1.5px white,
+    2000px 200px 2px 1px white,
+    2200px 800px 2.7px 1.3px white,
+    2400px 500px 2.2px 1.1px white,
+    2600px 100px 2.5px 1.2px white,
+    2800px 600px 1.9px 1px white,
+    3000px 300px 2.8px 1.4px white,
+    3200px 700px 2px 1px white,
+    3400px 400px 2.5px 1.2px white,
+    3600px 900px 2.9px 1.5px white,
+    3800px 200px 3px 1.6px white,
+    4000px 800px 2.3px 1.1px white,
+    4200px 150px 2.7px 1.3px white,
+    4400px 350px 2.1px 1px white,
+    4600px 650px 2.9px 1.4px white,
+    4800px 850px 2.6px 1.2px white,
+    5000px 250px 3px 1.5px white,
+    5200px 450px 2.4px 1.1px white,
+    5400px 750px 2.7px 1.3px white,
+    5600px 150px 2.2px 1px white,
+    5800px 550px 2.9px 1.4px white,
+    6000px 850px 3px 1.6px white,
+    6200px 300px 2.5px 1.2px white,
+    6400px 700px 2.1px 1px white,
+    6600px 100px 2.8px 1.3px white,
+    6800px 500px 2.3px 1.1px white,
+    7000px 800px 2.9px 1.5px white,
+    7200px 200px 2.6px 1.2px white,
+    7400px 600px 3px 1.6px white,
+    7600px 400px 2.7px 1.3px white,
+    7800px 100px 2.4px 1.1px white,
+    8000px 700px 2.5px 1.2px white,
+    8200px 300px 2.9px 1.4px white,
+    8400px 900px 3px 1.5px white,
+    8600px 500px 2.3px 1.1px white,
+    8800px 150px 2.6px 1.2px white,
+    9000px 800px 2.8px 1.3px white,
+    9200px 400px 3px 1.5px white,
+    9400px 100px 2.5px 1.2px white,
+    9600px 600px 2.7px 1.3px white,
+    9800px 250px 2.9px 1.4px white,
+    10000px 700px 2.6px 1.2px white,
+    10200px 500px 2.3px 1.1px white,
+    10400px 300px 3px 1.6px white,
+    10600px 100px 2.4px 1.1px white,
+    10800px 800px 2.8px 1.3px white,
+    11000px 600px 2.5px 1.2px white,
+    11200px 400px 2.9px 1.5px white,
+    11400px 200px 3px 1.6px white,
+    11600px 900px 2.6px 1.2px white,
+    11800px 700px 2.7px 1.3px white,
+    12000px 500px 2.8px 1.3px white;
+}
+
+
+
+@keyframes twinkle1 {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkle2 {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+/* Planet styling */
+.planet {
+  position: absolute;
+  width: 12vw;             /* Bigger than 8vw */
+  max-width: 100px;        /* Still capped for large screens */
+  height: auto;
+  object-fit: contain;
+  transition: all 0.6s ease;
+  z-index: 10;
+}
+
+/* Earth styling and spin */
+.earth {
+  border: 2px solid #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ff00;
+}
+
+.earth.spin {
+  animation: spin 1s linear 1;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Exit button */
+#exit-btn {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 10px #00ff00;
+  z-index: 1001;
+  transition: background 0.3s ease;
+}
+
+#exit-btn:hover {
+  background: #00ff00;
+}
+
+/* Contact button */
+#contact-btn {
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 24px;
+  background: #000000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00ff00;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+#contact-btn:hover {
+  background: rgb(179, 217, 157);
+}
+
+/* Chat window */
+#chat-window {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  max-width: 320px;
+  width: 80vw; /* Responsive width */
+  font-size: 1rem;
+  box-shadow: 0 0 15px #00ff00;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#chat-message {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+#chat-options button,
+#final-options a,
+#reset-btn {
+  display: inline-block;
+  margin: 8px 6px 0 0;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #030303;
+  box-shadow: 0 0 15px #00ff00;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+#chat-options button:hover,
+#final-options a:hover,
+#reset-btn:hover {
+  background-color: #00ff00;
+}
+
+#final-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#final-options.hidden {
+  display: none !important;
+}
+
+#sad-message {
+  margin-top: 12px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+#reset-btn {
+  margin-top: 12px;
+  background: #000000;
+}
+
+/* Planet reposition animation (optional visual effect) */
+.planet.move {
+  top: calc(10% + (50px * var(--rand-top)));
+  left: calc(15% + (50px * var(--rand-left)));
+}
+
+@media (max-width: 800px) {
+  #chat-window {
+    left: 10px !important;
+    right: 10px !important;
+    top: auto !important;
+    bottom: 20px;
+    transform: none !important;
+  }
+
+  #exit-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .planet {
+    position: absolute !important;
+    width: 18vw;
+    max-width: 90px;
+  }
+}
+
+/* 4K media query */
+@media (min-width: 2560px) {
+  /* Scale up planet sizes */
+  .planet {
+    width: 24vw;      /* was 12vw */
+    max-width: 200px; /* was 100px */
+  }
+
+  /* Earth border and shadow bigger */
+  .earth {
+    border-width: 4px; /* from 2px */
+    box-shadow: 0 0 30px #00ff00; /* doubled */
+  }
+
+  /* Exit button bigger */
+  #exit-btn {
+    font-size: 28px; /* from 14px */
+    padding: 16px 32px; /* from 8px 16px */
+    box-shadow: 0 0 20px #00ff00;
+  }
+
+  /* Contact button bigger */
+  #contact-btn {
+    padding: 28px 48px; /* from 14px 24px */
+    font-size: 24px;    /* add font size scaling */
+    box-shadow: 0 0 20px #00ff00;
+  }
+
+  /* Chat window text bigger */
+  #chat-message, 
+  #chat-options button, 
+  #final-options a, 
+  #sad-message, 
+  #email-display {
+    font-size: 28px; /* scale up from default (assumed ~14-16px) */
+  }
+
+  /* Reset button bigger */
+  #reset-btn {
+    font-size: 28px;
+    padding: 10px 20px;
+  }
+
+  /* Adjust galaxy container height if needed */
+  #galaxy {
+    height: 90vh; /* keep or increase if you want */
+  }
+
+  /* Optionally scale box-shadow stars to look bigger */
+  #galaxy::before,
+  #galaxy::after {
+    opacity: 1; /* a bit brighter for 4K */
+  }
+}
+

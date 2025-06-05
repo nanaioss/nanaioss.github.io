@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+
+body {
+  background-color: black;
+  color: #00ff00;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.exit-button {
+    position: fixed;
+    top: 1rem;           /* small offset from top */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;       /* high to stay on top */
+    background: black;
+    box-shadow: 0 0 1px #00ff00,
+    0 0 1px #00ff00,
+    0 0 2px #00ff00,
+    0 0 4px #00ff00;
+    color: #00ff00;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .exit-button:hover {
+    color: #ffff00;
+    text-shadow:
+      0 0 5px #ffff00,
+      0 0 10px #ffff00,
+      0 0 20px #ffff00,
+      0 0 40px #ffff00;
+  }
+  
+  .tour-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    gap: 3rem; /* space between children */
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+    
+  }
+  
+  .tour-title {
+    font-size: 1.5rem; /* roughly Tailwind's text-2xl */
+    text-shadow: 0 0 1px #00ff00,
+    0 0 1px #00ff00,
+    0 0 2px #00ff00,
+    0 0 4px #00ff00;
+    color: #00ff00;
+  }
+  
+  
+  .active-text {
+    font-size: 0.6em;
+    vertical-align: middle;
+    font-weight: normal;
+  }
+  
+  .buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+
+.button {
+  background: black;
+  border: 1px solid #00ff00;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #00ff00;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.button:hover {
+  background: #00ff00;
+  color: black;
+}
+
+#content {
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+  text-shadow: 0 0 3px #00ff00, 0 0 6px #00ff00;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  margin: 2rem auto;
+  padding-bottom: 5rem;
+}
+
+.line-wrapper {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+
+/* Booking form layout */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.booking-form input,
+.booking-form textarea {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Share Tech Mono', monospace;
+  resize: vertical;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: #00ff00aa;
+}
+
+.booking-form button {
+  margin-top: 1rem;
+}
+
+/* Matrix scan effect */
+.matrix {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.matrix::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.1) 0px,
+    rgba(0, 255, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scan 6s linear infinite;
+  filter: blur(1px) brightness(1.5) saturate(2);
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* Responsive tweaks */
+@media (max-height: 700px) {
+  #content {
+    margin-top: 1rem;
+  }
+}
+
+ @media (min-width: 768px) {
+    .tour-title {
+      font-size: 1.875rem; /* roughly Tailwind's md:text-3xl */
+    }
+  }
+
+  @media (min-width: 2560px) {
+    body {
+      font-size: 1.25rem; /* base font size bigger */
+    }
+  
+    .exit-button {
+      font-size: 1.5rem;      /* bigger exit button text */
+      padding: 0.8rem 2rem;   /* bigger clickable area */
+    }
+  
+    .tour-title {
+      font-size: 3rem;       /* very large title */
+    }
+  
+    .active-text {
+      font-size: 0.7em;      /* scale active text */
+    }
+  
+    .buttons-group {
+      max-width: 500px;      /* wider buttons group */
+    }
+  
+    .button {
+      font-size: 1.75rem;    /* bigger button text */
+      padding: 1rem 2rem;    /* bigger padding */
+      max-width: 500px;      /* wider buttons */
+    }
+  
+    #content {
+      font-size: 1.5rem;     /* bigger content text */
+      max-width: 90%;
+      margin: 3rem auto 8rem;
+    }
+  
+    .line-wrapper {
+      max-width: 1000px;     /* wider content lines */
+    }
+  
+    .booking-form {
+      max-width: 600px;      /* wider form */
+    }
+  
+    .booking-form label {
+      font-size: 1.25rem;    /* bigger form labels */
+    }
+  
+    .booking-form input,
+    .booking-form textarea {
+      padding: 1rem;         /* bigger input padding */
+      font-size: 1.25rem;    /* bigger input text */
+    }
+  
+    .booking-form button {
+      font-size: 1.75rem;    /* bigger form submit button */
+      padding: 1rem 2rem;
+    }
+
+    #content {
+      font-size: 2rem; /* base font size for all text inside content */
+    }
+  
+    #content .line-wrapper span {
+      font-size: 2rem; /* typed lines */
+    }
+  
+    #content form.booking-form label {
+      font-size: 1.8rem; /* form labels */
+    }
+  
+    #content form.booking-form input,
+    #content form.booking-form textarea {
+      font-size: 1.8rem; /* form inputs & textarea */
+      padding: 1rem;
+    }
+  
+    #content form.booking-form button {
+      font-size: 2rem; /* form submit button */
+      padding: 1rem 2rem;
+    }
+  }
+  

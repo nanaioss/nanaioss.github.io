@@ -1,0 +1,457 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #00ff00;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 10px #00ff00;
+  margin: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.neon-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.image-nav {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  z-index: 100;
+}
+
+.nav-label {
+  color: #00ff00;
+  font-size: 1rem;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.button-group {
+  margin-top: 2rem;
+}
+
+#memory-archive {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.memory-grid {
+  padding-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  width: 100%;
+
+}
+
+.memory-box {
+  width: 140px;              /* Fixed width to prevent resizing */
+  white-space: nowrap;       /* Prevent text wrapping */
+  overflow: hidden;          /* Hide overflowed text */
+  text-overflow: ellipsis;   /* Show "..." for clipped text */
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px transparent; /* Reserve space for glow */
+  cursor: pointer;
+  color: #00ff00;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  min-height: auto;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 3px #00ff00, 0 0 6px #00ff00;
+}
+
+.memory-box:hover {
+  border-color: #00ff00;               /* Neon green border on hover */
+  box-shadow: 0 0 10px #00ff00;       /* Neon green glow */
+  background-color: rgba(0, 255, 0, 0.05);
+  color: #ffff00;                     /* Neon yellow text */
+  text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00; /* Yellow neon glow on text */
+  transition: all 0.3s ease-in-out;
+}
+
+/* MODAL STYLES */
+.memory-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: auto;  /* Allows scrolling if content too large */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #00ff00;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 10px #00ff00;
+  margin: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.neon-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.image-nav {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  z-index: 100;
+}
+
+.nav-label {
+  color: #00ff00;
+  font-size: 1rem;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.button-group {
+  margin-top: 2rem;
+}
+
+#memory-archive {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.memory-grid {
+  padding-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.memory-box {
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px transparent;
+  cursor: pointer;
+  color: #00ff00;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  min-height: auto;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 3px #00ff00, 0 0 6px #00ff00;
+}
+
+.memory-box:hover {
+  border-color: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  background-color: rgba(0, 255, 0, 0.05);
+  color: #ffff00;
+  text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00;
+  transition: all 0.3s ease-in-out;
+}
+
+/* MODAL STYLES */
+.memory-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.modal-content {
+  background: rgba(0, 255, 0, 0.05);
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 25px #00ff00;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+
+  width: auto;
+  max-width: 90vw;
+  display: flex;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  align-items: flex-start;
+}
+
+#modal-media {
+  flex: 1 1 50%;
+}
+
+#modal-description {
+  flex: 1 1 50%;
+  text-align: left;
+  font-size: 1rem;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+  margin-top: 0;
+  word-wrap: break-word;
+}
+
+.memory-media {
+  max-width: 100%;
+  height: auto;
+  max-height: 60vh;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ff00;
+  margin-bottom: 1rem;
+}
+
+.neon-close {
+  position: fixed; /* fix position relative to viewport */
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: black;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 44px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: 0 0 15px #00ff00;
+  transition: background 0.2s, color 0.2s;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 10000; /* ensure on top */
+  touch-action: manipulation; /* improve tap responsiveness */
+}
+
+.neon-close:hover {
+  background: rgba(0, 255, 0, 0.2);
+  color: #ccff33;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .neon-close {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 38px;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  h1#typewriter {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1rem;
+    max-width: 95vw;
+    max-height: 85vh;
+    flex-direction: column;
+  }
+
+  #modal-media,
+  #modal-description {
+    flex: none;
+    width: 100%;
+  }
+
+  #modal-description {
+    margin-top: 1rem;
+  }
+
+  .memory-description {
+    font-size: 0.9rem;
+  }
+
+  .memory-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .memory-box {
+    font-size: 0.7rem;
+    min-height: 60px;
+    width: 100px;
+  }
+
+  h1#typewriter {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1rem;
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+
+  .memory-description {
+    font-size: 0.9rem;
+  }
+
+  .memory-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .memory-box {
+    font-size: 0.7rem;
+    min-height: 60px;
+    width: 100px;
+  }
+  
+}
+
+@media (max-width: 800px) {
+
+  h1#typewriter {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 2540px) {
+  /* Increase base font size */
+  html {
+    font-size: 20px; /* or larger, e.g., 22px */
+  }
+
+  /* Body text and headings */
+  body, p, h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em; /* 50% bigger than base */
+  }
+
+  /* Increase grid columns and gap */
+  .memory-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+  }
+
+  /* Bigger memory boxes */
+  .memory-box {
+    font-size: 1.8rem; /* bigger */
+    padding: 1.2rem; /* a bit more padding for bigger text */
+    width: 160px; /* slightly wider to fit bigger text */
+    white-space: normal; /* allow wrapping so bigger text doesn't get cut off */
+    overflow-wrap: break-word; /* break long words */
+  }
+  
+  #modal-description {
+    font-size: 1.6rem; /* bigger description text */
+    line-height: 1.5;  /* easier to read */
+    word-wrap: break-word;
+  }
+
+  /* Bigger buttons */
+  .neon-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+  }
+
+  /* Images and other media */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    /* Optionally increase max size */
+    max-height: 400px;
+  }
+  .neon-text {
+    font-size: 2rem; /* bigger */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  }
+  .nav-label {
+    font-size: 2rem;
+  }
+  
+}
+

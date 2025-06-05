@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Page - Matrix Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tour.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body class="min-h-screen bg-black text-green-400  overflow-auto relative">
+    <div class="matrix"></div>
+  
+    <!-- Exit Button -->
+    <a href="../index.html" class="exit-button">EXIT</a>
+
+  
+    <div class="tour-container">
+        <h1 class="tour-title">TOUR SYSTEM <span class="active-text">[ACTIVE]</span></h1>
+        <div class="buttons-group">
+          <button onclick="showSection('upcoming')" class="button">Upcoming Shows</button>
+          <button onclick="showSection('book')" class="button">Book Me</button>
+          <button onclick="showSection('past')" class="button">Past Shows</button>
+        </div>
+      </div>
+      
+    <div id="content" class="w-full px-4 flex flex-col items-center mt-8 mb-16"></div>
+  
+    <script>
+      function typeLines(element, lines) {
+        element.innerHTML = '';
+  
+        lines.forEach((line) => {
+          const lineWrapper = document.createElement('div');
+          lineWrapper.className = 'line-wrapper';
+          const span = document.createElement('span');
+          lineWrapper.appendChild(span);
+          element.appendChild(lineWrapper);
+  
+          let j = 0;
+          const typeChar = () => {
+            if (j < line.length) {
+              span.textContent += line.charAt(j);
+              j++;
+              setTimeout(typeChar, 15);
+            }
+          };
+          typeChar();
+        });
+      }
+  
+      function showSection(type) {
+        const content = document.getElementById('content');
+        content.scrollIntoView({ behavior: 'smooth' });
+  
+        if (type === 'upcoming') {
+          typeLines(content, [
+            '→ July 5, 2025 — Bremen, Germany, ',
+            '→ September, 2025 — TBA, Berlin, Germany',
+            '→ November 14, 2025 — TBA, Berlin, Germany'
+          ]);
+        } else if (type === 'book') {
+          content.innerHTML = `
+          <form id="bookingForm" action="https://formspree.io/f/xanjnnrd" method="POST" target="_blank" class="booking-form">
+
+              <label>Name:
+                <input type="text" name="name" required placeholder="Your name" />
+              </label>
+              <label>Email:
+                <input type="email" name="_replyto" required placeholder="Your email" />
+              </label>
+              <label>Preferred Date:
+                <input type="date" name="date" required />
+              </label>
+              <label>Message:
+                <textarea name="message" placeholder="Your message" rows="4"></textarea>
+              </label>
+              <button type="submit" class="button">Send Booking Request</button>
+            </form>
+          `;
+        } else if (type === 'past') {
+          typeLines(content, [
+            '← 26.05.2025 — Panda Platforma — Berlin, Germany',
+            '← 10.05.2025 — In The Mountains — Berlin, Germany',
+            '← 04.04.2025 — Spore Initiative — Berlin, Germany',
+            '← 29.03.2025 — Giri / NoiseXP — Berlin, Germany',
+            '← 10.04.2025 — Ballhaus Prinzenallee — Berlin, Germany',
+            '← 15.03.2025 — Bar Bobu — Berlin, Germany',
+            '← 24.02.2025 — Residenz Theater — Munich, Germany',
+            '← 20.02.2025 — Westflugel Theater — Leipzig, Germany',
+            '← 10.12.2024 — Panda Theater — Berlin, Germany',
+            '← 20.10.2023 — Kirtimu Kulturos Centras — Vilnius, Lithuania',
+            '← 15.09.2023 — Loophole — Berlin, Germany',
+            '← 04.08.2023 — Mutant Radio — Tbilisi, Georgia',
+            '← 19.07.2023 — Ertad Bar — Tbilisi, Georgia',
+            '← 18.07.2023 — Data\'s Garden — Rustavi, Georgia',
+            '← 15.07.2023 — Perfect Strangers — Tbilisi, Georgia',
+            '← 26.05.2023 — Hypersonic Festival — Berlin, Germany',
+            '← 16.03.2023 — Loophole — Berlin, Germany',
+            '← 09.02.2023 — Madame Claude — Berlin, Germany',
+            '← 26.11.2022 — Episode Bar — Tbilisi, Georgia',
+            '← 25.11.2022 — Holoseum Museum — Tbilisi, Georgia',
+            '← 24.11.2022 — Data\'s Garden — Rustavi, Georgia',
+            '← 03.11.2022 — Pony Bar — Hamburg, Germany',
+            '← 22.10.2022 — Kikisol — Berlin, Germany',
+            '← 04.12.2021 — Eye Square — Berlin, Germany',
+            '← 24.10.2021 — Unifying Gate Festival — Berlin, Germany'
+          ]);
+        }
+      }
+    </script>
+  </body>
+  
+  </script>
+  
+</body>
+</html>
