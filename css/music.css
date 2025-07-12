@@ -108,7 +108,7 @@ body {
   /* Decorative background images */
   .background-images .bg {
     position: absolute;
-    max-width: 49vw;
+    max-width:49vw;
     opacity: 0.70;
     pointer-events: none;
     z-index: 0;
