@@ -7,76 +7,111 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/tour.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
 </head>
-<body class="min-h-screen bg-black text-green-400 overflow-auto relative">
-  <div class="matrix"></div>
-
-  <!-- Exit Button -->
-  <a href="../index.html" class="exit-button">EXIT</a>
-
-  <div class="tour-container">
-    <h1 class="tour-title">TOUR SYSTEM <span class="active-text">[ACTIVE]</span></h1>
-    <div class="buttons-group">
-      <button onclick="showSection('upcoming')" class="button">Upcoming Shows</button>
-      <button onclick="showSection('book')" class="button">Book Me</button>
-    </div>
-  </div>
+<body class="min-h-screen bg-black text-green-400  overflow-auto relative">
+    <div class="matrix"></div>
   
-  <div id="content" class="w-full px-4 flex flex-col items-center mt-8 mb-16"></div>
+    <!-- Exit Button -->
+    <a href="../index.html" class="exit-button">EXIT</a>
 
-  <script>
-    function typeLines(element, lines) {
-      element.innerHTML = '';
-
-      lines.forEach((line) => {
-        const lineWrapper = document.createElement('div');
-        lineWrapper.className = 'line-wrapper';
-        const span = document.createElement('span');
-        lineWrapper.appendChild(span);
-        element.appendChild(lineWrapper);
-
-        let j = 0;
-        const typeChar = () => {
-          if (j < line.length) {
-            span.textContent += line.charAt(j);
-            j++;
-            setTimeout(typeChar, 15);
-          }
-        };
-        typeChar();
-      });
-    }
-
-    function showSection(type) {
-      const content = document.getElementById('content');
-      content.scrollIntoView({ behavior: 'smooth' });
-
-      if (type === 'upcoming') {
-        typeLines(content, [
-
-          '→ September, 2025 — TBA, Berlin, Germany',
-          '→ November 14, 2025 — TBA, Berlin, Germany'
-        ]);
-      } else if (type === 'book') {
-        content.innerHTML = `
-        <form id="bookingForm" action="https://formspree.io/f/xanjnnrd" method="POST" target="_blank" class="booking-form">
-          <label>Name:
-            <input type="text" name="name" required placeholder="Your name" />
-          </label>
-          <label>Email:
-            <input type="email" name="_replyto" required placeholder="Your email" />
-          </label>
-          <label>Preferred Date:
-            <input type="date" name="date" required />
-          </label>
-          <label>Message:
-            <textarea name="message" placeholder="Your message" rows="4"></textarea>
-          </label>
-          <button type="submit" class="button">Send Booking Request</button>
-        </form>
-        `;
+  
+    <div class="tour-container">
+        <h1 class="tour-title">TOUR SYSTEM <span class="active-text">[ACTIVE]</span></h1>
+        <div class="buttons-group">
+          <button onclick="showSection('upcoming')" class="button">Upcoming Shows</button>
+          <button onclick="showSection('book')" class="button">Book Me</button>
+          <button onclick="showSection('past')" class="button">Past Shows</button>
+        </div>
+      </div>
+      
+    <div id="content" class="w-full px-4 flex flex-col items-center mt-8 mb-16"></div>
+  
+    <script>
+      function typeLines(element, lines) {
+        element.innerHTML = '';
+  
+        lines.forEach((line) => {
+          const lineWrapper = document.createElement('div');
+          lineWrapper.className = 'line-wrapper';
+          const span = document.createElement('span');
+          lineWrapper.appendChild(span);
+          element.appendChild(lineWrapper);
+  
+          let j = 0;
+          const typeChar = () => {
+            if (j < line.length) {
+              span.textContent += line.charAt(j);
+              j++;
+              setTimeout(typeChar, 15);
+            }
+          };
+          typeChar();
+        });
       }
-    }
+  
+      function showSection(type) {
+        const content = document.getElementById('content');
+        content.scrollIntoView({ behavior: 'smooth' });
+  
+        if (type === 'upcoming') {
+          typeLines(content, [
+            '→ September, 2025 — TBA, Berlin, Germany',
+            '→ November 14, 2025 — TBA, Berlin, Germany'
+          ]);
+        } else if (type === 'book') {
+          content.innerHTML = `
+          <form id="bookingForm" action="https://formspree.io/f/xanjnnrd" method="POST" target="_blank" class="booking-form">
+
+              <label>Name:
+                <input type="text" name="name" required placeholder="Your name" />
+              </label>
+              <label>Email:
+                <input type="email" name="_replyto" required placeholder="Your email" />
+              </label>
+              <label>Preferred Date:
+                <input type="date" name="date" required />
+              </label>
+              <label>Message:
+                <textarea name="message" placeholder="Your message" rows="4"></textarea>
+              </label>
+              <button type="submit" class="button">Send Booking Request</button>
+            </form>
+          `;
+        } else if (type === 'past') {
+          typeLines(content, [
+            '← 26.05.2025 — Panda Platforma ',
+            '← 10.05.2025 — In The Mountains ',
+            '← 04.04.2025 — Spore Initiative ',
+            '← 29.03.2025 — Giri / NoiseXP ',
+            '← 10.04.2025 — Ballhaus Prinzenallee ',
+            '← 15.03.2025 — Bar Bobu ',
+            '← 24.02.2025 — Residenz Theater ',
+            '← 20.02.2025 — Westflugel Theater ',
+            '← 10.12.2024 — Panda Theater ',
+            '← 20.10.2023 — Kirtimu Culture Centre ',
+            '← 15.09.2023 — Loophole ',
+            '← 04.08.2023 — Mutant Radio ',
+            '← 19.07.2023 — Ertad Bar ',
+            '← 18.07.2023 — Data\'s Garden',
+            '← 15.07.2023 — Perfect Strangers ',
+            '← 26.05.2023 — Hypersonic Festival',
+            '← 16.03.2023 — Loophole ',
+            '← 09.02.2023 — Madame Claude ',
+            '← 26.11.2022 — Episode Bar ',
+            '← 25.11.2022 — Holoseum Museum ',
+            '← 24.11.2022 — Data\'s Garden ',
+            '← 03.11.2022 — Pony Bar ',
+            '← 22.10.2022 — Kikisol ',
+            '← 04.12.2021 — Eye Square ',
+            '← 24.10.2021 — Unifying Gate Festival '
+          ]);
+        }
+      }
+    </script>
+  </body>
+  
   </script>
+  
 </body>
 </html>
